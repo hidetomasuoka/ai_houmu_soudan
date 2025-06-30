@@ -1,0 +1,694 @@
+body {
+    background-color: #f8fafc;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    color: #334155;
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: 1024px;
+}
+
+/* 1024px向けレイアウト調整 */
+.container {
+    max-width: 1024px !important;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.display-4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.lead {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+/* Code and technical text */
+code, pre, .law-detail-modal pre {
+    font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-weight: 500;
+}
+
+/* Button typography */
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Card header typography */
+.card-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+/* AI response typography */
+.ai-response h5, .ai-response h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.response-content {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+}
+
+/* Law reference typography */
+.referenced-laws-list {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+/* Badge and tag typography */
+.badge, .keyword-tag {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Modal typography */
+.law-detail-modal h4, .law-detail-modal h5, .law-detail-modal h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border-bottom: 3px solid #0ea5e9;
+}
+
+.search-result-item {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+    background-color: #e9ecef;
+}
+
+.law-title {
+    font-weight: 600;
+    color: #0ea5e9;
+    margin-bottom: 5px;
+}
+
+.law-info {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.consultation-response {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 4px solid #0ea5e9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 2px 10px rgba(14, 165, 233, 0.1);
+}
+
+.loading {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.375rem;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.law-content {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 15px;
+    background-color: white;
+}
+
+.article-content {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+.ai-badge {
+    background: linear-gradient(135deg, #0ea5e9 0%, #1e293b 100%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: 8px;
+    box-shadow: 0 2px 4px rgba(14, 165, 233, 0.3);
+}
+
+.ai-response {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+    border: 1px solid #0ea5e9;
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
+}
+
+.ai-response h5 {
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.ai-response .response-content {
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+.basic-response {
+    background-color: #f8f9fa;
+    border-left: 4px solid #6c757d;
+    padding: 15px;
+    border-radius: 0.375rem;
+    margin-top: 15px;
+}
+
+.gemini-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.gemini-enabled {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.gemini-disabled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.ai-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 10px;
+    border-radius: 0.375rem;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+/* 規程コンプライアンスチェック関連 */
+.compliance-report {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 28px;
+    margin-top: 20px;
+    border: 1px solid #0ea5e9;
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+}
+
+.compliance-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.risk-indicator {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.risk-low {
+    background-color: #28a745;
+    color: white;
+}
+
+.risk-low-medium {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.risk-medium {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.risk-high {
+    background-color: #dc3545;
+    color: white;
+}
+
+.risk-unknown {
+    background-color: #6c757d;
+    color: white;
+}
+
+.compliance-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.compliance-section h6 {
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.law-compliance-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #ffffff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.law-compliance-item.risk-high {
+    border-left-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.law-compliance-item.risk-medium {
+    border-left-color: #fd7e14;
+    background-color: rgba(253, 126, 20, 0.1);
+}
+
+.law-compliance-item.risk-low {
+    border-left-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.recommendation-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-urgent {
+    border-left: 5px solid #dc3545;
+}
+
+.recommendation-high {
+    border-left: 5px solid #fd7e14;
+}
+
+.recommendation-medium {
+    border-left: 5px solid #ffc107;
+}
+
+.metadata-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.keyword-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin: 2px;
+}
+
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.upload-area:hover {
+    border-color: #0ea5e9;
+}
+
+.upload-area.drag-over {
+    border-color: #0ea5e9;
+    background-color: rgba(14, 165, 233, 0.1);
+}
+
+
+.btn-primary {
+    background: linear-gradient(135deg, #0ea5e9 0%, #1e293b 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0284c7 0%, #1e293b 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+}
+
+.btn-outline-primary {
+    border: 2px solid #0ea5e9;
+    color: #0ea5e9;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0ea5e9;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.card {
+    box-shadow: 0 4px 20px rgba(30, 41, 59, 0.08);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(30, 41, 59, 0.12);
+}
+
+.professional-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+    border-top: 3px solid #0ea5e9;
+    font-size: 0.9em;
+}
+
+.professional-footer a {
+    color: #0ea5e9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.professional-footer a:hover {
+    color: #38bdf8;
+}
+
+/* AI相談中の待機画面 */
+.ai-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+}
+
+.ai-loading-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.ai-loading-spinner {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #1565c0;
+    border-top: 4px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 2rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ai-loading-dots {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 20px;
+    margin: 1rem 0;
+}
+
+.ai-loading-dots div {
+    position: absolute;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1565c0;
+    animation: loading-dots 1.2s linear infinite;
+}
+
+.ai-loading-dots div:nth-child(1) { left: 8px; animation-delay: 0s; }
+.ai-loading-dots div:nth-child(2) { left: 32px; animation-delay: -0.4s; }
+.ai-loading-dots div:nth-child(3) { left: 56px; animation-delay: -0.8s; }
+
+@keyframes loading-dots {
+    0%, 80%, 100% {
+        transform: scale(0);
+    } 40% {
+        transform: scale(1);
+    }
+}
+
+.ai-loading-steps {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.ai-loading-steps li {
+    padding: 0.5rem 0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.ai-loading-steps li.active {
+    opacity: 1;
+    color: #1565c0;
+}
+
+.ai-loading-steps li.completed {
+    opacity: 1;
+    color: #4caf50;
+}
+
+.ai-loading-steps li i {
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
+/* 質問編集モーダル */
+.question-edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.question-edit-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* 1024px固定幅でのレスポンシブ調整 */
+@media (max-width: 1024px) {
+    body {
+        min-width: auto;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* ヘッダー部分の1024px最適化 */
+header .d-flex {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* タブとパネルの1024px最適化 */
+.nav-pills {
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.nav-pills .nav-link {
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* カードレイアウトの1024px最適化 */
+.col-lg-10 {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ナレッジグラフコンテナの1024px最適化 */
+.knowledge-graph-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.knowledge-graph-container div[id*="knowledgeGraphVisualization"] {
+    min-width: 600px;
+    width: 100% !important;
+}
+
+/* フッターの1024px最適化 */
+.professional-footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+}
+
+/* AI応答エリアの1024px最適化 */
+.ai-response {
+    margin-top: 1.5rem;
+    padding: 2rem;
+}
+
+.response-content {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* 読み込み画面の1024px最適化 */
+.ai-loading-content {
+    max-width: 600px;
+    padding: 2rem;
+}
+
+/* ヒアリング質問カードの1024px最適化 */
+.question-card {
+    margin-bottom: 2rem;
+}
+
+.question-card h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* フォーム要素の1024px最適化 */
+.form-control {
+    font-size: 1rem;
+    padding: 0.75rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+}
+
+.question-edit-textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 1rem;
+    border: 2px solid #e3f2fd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+.question-edit-textarea:focus {
+    outline: none;
+    border-color: #1565c0;
+}
+
+.edit-button {
+    background: #e3f2fd;
+    border: 1px solid #1565c0;
+    color: #1565c0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+    background: #1565c0;
+    color: white;
+}

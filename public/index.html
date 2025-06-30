@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI法務相談ツール</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center mb-5">
+            <div class="d-flex justify-content-between align-items-start">
+                <div class="flex-grow-1">
+                    <h1 class="display-4 mb-3" style="color: #1e293b; font-weight: 700;">AI法務相談ツール</h1>
+                    <p class="lead" style="color: #64748b; font-size: 1.1em;">AI法務相談と規程コンプライアンスチェックに特化したプロフェッショナルシステム</p>
+                    <p class="text-muted">法的アドバイスと規程の法令適合性を効率的にチェック</p>
+                </div>
+                <div class="text-end">
+                    <a href="prompt-tuning.html" class="btn btn-outline-primary">
+                        🛠️ プロンプトチューニング
+                    </a>
+                </div>
+            </div>
+            <div id="aiStatus" class="alert alert-info" style="display: none;"></div>
+        </header>
+
+        <!-- 相談方法選択タブ -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <ul class="nav nav-pills justify-content-center mb-4" id="consultationTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="hearing-tab" data-bs-toggle="pill" data-bs-target="#hearing-panel" type="button" role="tab">
+                            🎯 ヒアリング形式（推奨）
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="direct-tab" data-bs-toggle="pill" data-bs-target="#direct-panel" type="button" role="tab">
+                            ✏️ 直接入力
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="consultationTabContent">
+                    <!-- ヒアリング形式パネル -->
+                    <div class="tab-pane fade show active" id="hearing-panel" role="tabpanel">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><span class="ai-badge">🤖 AI</span> ヒアリング式法務相談</h3>
+                                <small class="text-light">段階的な質問で詳細を伺い、最適なアドバイスを提供します</small>
+                            </div>
+                            <div class="card-body">
+                                <div id="hearingContainer">
+                                    <div class="text-center">
+                                        <button id="startHearingButton" class="btn btn-primary btn-lg">
+                                            🎯 ヒアリングを開始する
+                                        </button>
+                                        <p class="mt-3 text-muted">
+                                            いくつかの質問にお答えいただくことで、<br>
+                                            より具体的で実践的な法的アドバイスを提供できます
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="hearingProgress" style="display: none;">
+                                    <div class="progress mb-3">
+                                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <div id="hearingQuestions"></div>
+                                    <div id="hearingSummary" style="display: none;"></div>
+                                </div>
+                                <div id="hearingResult" class="mt-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 直接入力パネル -->
+                    <div class="tab-pane fade" id="direct-panel" role="tabpanel">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><span class="ai-badge">🤖 AI</span> 直接入力法務相談</h3>
+                                <small class="text-light">具体的な質問を直接入力して相談できます</small>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <textarea id="consultationQuery" class="form-control" rows="5" placeholder="法的な質問を入力してください
+
+例：
+・労働契約の解約条項について知りたい
+・従業員の懲戒処分について相談したい
+・個人情報保護法の対応について確認したい
+・取引先との契約トラブルについて"></textarea>
+                                </div>
+                                <button id="consultationButton" class="btn btn-success btn-lg">
+                                    <span class="ai-badge">🤖 AI</span> 相談する
+                                </button>
+                                
+                                <div id="consultationResult" class="mt-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Professional Footer -->
+    <footer class="professional-footer">
+        <div class="container">
+            <p class="mb-1">AI法務相談ツール</p>
+            <p class="mb-0">このツールは参考情報の提供を目的としており、正式な法的判断には専門弁護士へのご相談をお勧めします</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="knowledge-graph.js"></script>
+    <script src="hearing.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
